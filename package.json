@@ -1,6 +1,6 @@
 {
-  "name": "cohenz-pro-bot-v2",
-  "version": "1.1.0",
+  "name": "cohenz-pro-v2",
+  "version": "1.2.0",
   "description": "Professional WhatsApp Bot for iMac Recordz",
   "main": "index.js",
   "scripts": {
@@ -14,9 +14,9 @@
     "qrcode-terminal": "^0.12.0",
     "sharp": "^0.33.0",
     "fluent-ffmpeg": "^2.1.2",
-    "ytdl-core": "latest",
+    "ytdl-core": "^4.11.5",
     "jimp": "^0.22.10",
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.2.0",
+    "file-type": "^16.5.4"
   }
 }
-
