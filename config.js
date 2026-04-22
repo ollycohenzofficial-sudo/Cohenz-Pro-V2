@@ -9,9 +9,8 @@ global.author = "iMac Recordz";
 global.prefix = ".";
 
 // SETTINGS
-global.public_mode = true; // Set to 'false' for Private Mode
+global.public_mode = true; 
 global.gemini_api_key = process.env.GEMINI_API_KEY || "no_key";
-global.removebg_api_key = process.env.REMOVEBG_API_KEY || "no_key";
 
 module.exports = {
   sessionName: "session"
