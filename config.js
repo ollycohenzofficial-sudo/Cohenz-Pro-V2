@@ -10,9 +10,9 @@ global.prefix = ".";
 
 // SETTINGS
 global.public_mode = true; 
+global.antibad = false; // Default off
 global.gemini_api_key = process.env.GEMINI_API_KEY || "no_key";
 
 module.exports = {
   sessionName: "session"
 };
-
