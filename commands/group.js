@@ -2,36 +2,25 @@ module.exports = {
     name: 'kick',
     alias: ['promote', 'warn', 'antibad'],
     async start(m, { text, command, conn, isBotAdmin, isAdmin }) {
-        if (!m.isGroup) return m.reply("This only works in groups!");
-        if (!isAdmin) return m.reply("You must be a Group Admin to use this!");
-        if (!isBotAdmin) return m.reply("Make the bot an Admin first!");
+        if (!m.isGroup) return m.reply("Groups only!");
+        if (!isAdmin) return m.reply("You need to be an Admin!");
+        if (!isBotAdmin) return m.reply("I need Admin rights!");
 
         const user = m.mentionedJid[0] || (m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net');
-        if (!user || user.length < 10) return m.reply("Tag or reply to the user!");
+        if (!user || user.length < 10) return m.reply("Tag or reply to someone!");
 
         if (command === 'kick') {
             await conn.groupParticipantsUpdate(m.chat, [user], 'remove');
-            return m.reply("👢 Done. User has been removed.");
-        }
-
-        if (command === 'promote') {
+            m.reply("👢 Kicked.");
+        } else if (command === 'promote') {
             await conn.groupParticipantsUpdate(m.chat, [user], 'promote');
-            return m.reply("⭐ Done. User is now an Admin.");
-        }
-
-        if (command === 'warn') {
-            return m.reply(`⚠️ @${user.split('@')[0]}, this is your official warning!`, { mentions: [user] });
-        }
-
-        if (command === 'antibad') {
-            if (text === 'on') {
-                global.antibad = true;
-                return m.reply("🔞 Antibad-word is now ACTIVE.");
-            } else {
-                global.antibad = false;
-                return m.reply("✅ Antibad-word is now DISABLED.");
-            }
+            m.reply("⭐ Promoted.");
+        } else if (command === 'warn') {
+            m.reply(`⚠️ @${user.split('@')[0]}, final warning!`, { mentions: [user] });
+        } else if (command === 'antibad') {
+            global.antibad = (text === 'on');
+            m.reply(`🔞 Antibad: ${global.antibad ? 'ON' : 'OFF'}`);
         }
     }
 };
-      
+
