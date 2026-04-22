@@ -1,0 +1,17 @@
+{
+  "name": "cohenz-pro-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp Bot for iMac Recordz",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.6.0",
+    "dotenv": "^16.4.5",
+    "qrcode-terminal": "^0.12.0",
+    "sharp": "^0.33.0",
+    "axios": "^1.6.0"
+  }
+}
+
