@@ -8,10 +8,12 @@ global.packname = "Cohenz Pro";
 global.author = "iMac Recordz";
 global.prefix = ".";
 
-// AI Settings - These pull from Hugging Face Secrets
+// SETTINGS
+global.public_mode = true; // Set to 'false' for Private Mode
 global.gemini_api_key = process.env.GEMINI_API_KEY || "no_key";
-global.gemini_model = "gemini-1.5-flash";
+global.removebg_api_key = process.env.REMOVEBG_API_KEY || "no_key";
 
 module.exports = {
   sessionName: "session"
 };
+
